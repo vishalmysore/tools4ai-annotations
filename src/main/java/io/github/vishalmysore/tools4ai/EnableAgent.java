@@ -7,6 +7,6 @@ import java.lang.annotation.*;
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-@Import(AgentConfiguration.class) // This will import your config when the annotation is used
+@Import(ConditionalAgentImportSelector.class)// This will import your config when the annotation is used
 public @interface EnableAgent {
 }

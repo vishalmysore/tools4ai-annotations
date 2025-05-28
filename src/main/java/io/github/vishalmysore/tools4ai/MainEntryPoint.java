@@ -5,6 +5,7 @@ import io.github.vishalmysore.a2a.domain.JsonRpcRequest;
 import io.github.vishalmysore.common.server.SpringAwareJSONRpcController;
 import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -17,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
  *  tasks/cancel
  *  tasks/setPushNotification etc
  * */
+@ConditionalOnProperty(name = "agent.secure.enabled", havingValue = "false", matchIfMissing = true)
 @RestController
 @RequestMapping("/")
 @Log
